@@ -7,7 +7,7 @@ terraform {
   backend "s3" {
     bucket = "f0084r-terraform-up-running-remote-state"
     key = "terraform.tfstate"
-    dynamodb_table = "dynamodb_terraform-state-lock"
+#    dynamodb_table = "dynamodb_terraform-state-lock"
     region = "us-east-1"
     encrypt = "true"
   }
@@ -31,8 +31,8 @@ resource "aws_s3_bucket" "f0084r-terraform-up-running-remote-state" {
 }
 
 
-resource "aws_dynamodb_table" "dynamodb_terraform-state-lock" {
-  name = "dynamodb_terraform-state-lock"
+resource "aws_dynamodb_table" "terraform-state-lock" {
+  name = "terraform-state-lock"
   hash_key = "LockID"
   read_capacity = 20
   write_capacity = 20
