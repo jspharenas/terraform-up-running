@@ -6,7 +6,7 @@ provider "aws" {
 terraform {
   backend "s3" {
     bucket = "f0084r-terraform-up-running-remote-state"
-    key = "terraform.tfstate"
+    key = "global/s3/terraform.tfstate"
 #    dynamodb_table = "dynamodb_terraform-state-lock"
     region = "us-east-1"
     encrypt = "true"
