@@ -3,12 +3,6 @@ provider "aws" {
 }
 
 
-variable "server_port" {
-  description = "The port the server will use for HTTP requests"
-  default = 8080
-}
-
-
 resource "aws_security_group" "instance" {
   name = "terraform-example-instance"
 
@@ -60,11 +54,6 @@ resource "aws_autoscaling_group" "example" {
     value = "terraform-asg-example"
     propagate_at_launch = true
   }
-}
-
-
-output "elb_dns_name" {
-  value = "${aws_elb.example.dns_name}"
 }
 
 
