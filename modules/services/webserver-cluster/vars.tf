@@ -17,3 +17,18 @@ variable "db_remote_state_bucket" {
 variable "db_remote_state_key" {
   description = "The path for the database's remote state in S3"
 }
+
+
+variable "instance_type" {
+  description = "The type of EC2 Instances to run (e.g. t2.micro)"
+}
+
+
+variable "min_size" {
+  description = "The mininum number of EC2 Instances in the ASG"
+}
+
+
+variable "max_size" {
+  description = "The maximum number of EC2 Instances in the ASG"
+}
