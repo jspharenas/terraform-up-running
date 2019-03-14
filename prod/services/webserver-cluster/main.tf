@@ -9,7 +9,7 @@ module "webserver_cluster" {
   db_remote_state_bucket = "f0084r-terraform-up-running-remote-state"
   db_remote_state_key = "prod/data-stores/mysql/terraform.tfstate"
 
-  instance_type = "m4.large"
+  instance_type = "t2.micro"
   min_size = 2
   max_size = 10
 }
