@@ -33,6 +33,10 @@ data "template_file" "user_data" {
 
 resource "aws_security_group" "instance" {
   name = "${var.cluster_name}-instance"
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 
@@ -44,10 +48,6 @@ resource "aws_security_group_rule" "allow_http_8080_inbound" {
   to_port = "${var.server_port}"
   protocol = "tcp"
   cidr_blocks = ["0.0.0.0/0"]
-
-  lifecycle {
-    create_before_destroy = true
-  }
 }
 
 
