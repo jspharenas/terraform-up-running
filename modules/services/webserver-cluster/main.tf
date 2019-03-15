@@ -82,7 +82,7 @@ resource "aws_autoscaling_group" "example" {
 
 
 resource "aws_security_group" "elb" {
-  name = "${var.cluster_name}-lb"
+  name = "${var.cluster_name}-elb"
 
   ingress {
     from_port = 80
