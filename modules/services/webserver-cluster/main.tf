@@ -41,7 +41,7 @@ resource "aws_security_group" "instance" {
 
 
 resource "aws_security_group_rule" "allow_http_8080_inbound" {
-  type = ingress
+  type = "ingress"
   security_group_id = "${aws_security_group.instance.id}"
 
   from_port = "${var.server_port}"
